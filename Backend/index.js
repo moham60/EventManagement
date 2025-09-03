@@ -21,13 +21,7 @@ app.use(express.json());
 connectDB();
 
 // السماح لجميع الدومينات (للتجربة فقط)
-app.use(
-  cors({
-    origin: "*", // تقدر تحط دومين الفرونت بس مثلاً "https://event-management-dq85.vercel.app"
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors());
 
 //authRout
 app.use("/api/auth", authRoute);
@@ -47,5 +41,7 @@ app.use("/api/reports", reportsRoute);
 //userRoute
 app.use("/api/user", userRoute);
 /////
-module.exports = app;
-
+const PORT = process.env.PORT||5000;
+app.listen(PORT, () => {
+  console.log("🚀 Server running on port 5000");
+});
