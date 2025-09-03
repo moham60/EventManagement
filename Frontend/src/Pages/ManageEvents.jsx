@@ -16,6 +16,7 @@ export default function ManageEvents() {
   const { token } = useContext(AuthContext);
   const { setevents, events } = useContext(Eventcontxt);
   const [displayedEvents, setdisplayedEvents] = useState([]);
+  const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     setdisplayedEvents(events);
     console.log("displayedEvents",displayedEvents)
@@ -30,7 +31,7 @@ export default function ManageEvents() {
  useEffect(() => {
    if (!token) return; // لو token مش جاهز متعملش request
    axios
-     .get("http://localhost:5000/api/venue/get", {
+     .get(`${API_URL}/venue/get`, {
        headers: { Authorization: `Bearer ${token}` },
      })
      .then((res) => {
@@ -59,7 +60,7 @@ export default function ManageEvents() {
       return;
     }
     axios
-      .post("http://localhost:5000/api/event", values, {
+      .post(`${API_URL}/event`, values, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -101,7 +102,7 @@ export default function ManageEvents() {
   });
 const deleteEvent = (id) => {
   axios
-    .delete(`http://localhost:5000/api/event/${id}`)
+    .delete(`${API_URL}/event/${id}`)
     .then((res) => {
       console.log("deleted", res.data);
       setevents((prev) => prev.filter((ev) => ev._id !== res.data.event._id));

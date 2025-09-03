@@ -1,9 +1,10 @@
 
 import { FaArrowTrendDown } from 'react-icons/fa6';
 export default function Reports() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const handleDownload = (type) => {
     // استبدل الرابط دا بالـ API endpoint عندك
-    const url = `http://localhost:5000/api/reports/${type}`;
+    const url = `${API_URL}/reports/${type}`;
     window.open(url, "_blank");
   };
 

@@ -4,18 +4,17 @@ import { AuthContext } from "../Contexts/AuthContext";
 import { Eventcontxt } from "../Contexts/EventContext";
 import { formatDate } from "../../index";
 import axios from "axios";
-import { useQuery } from "react-query";
-import ClockLoader from "react-spinners/ClockLoader";
 import LoaderScreen from "../Components/LoaderScreen";
 
 export default function DashboardUser() {
   const { user } = useContext(AuthContext);
   const { events } = useContext(Eventcontxt);
   const [isLoading, setisLoading] = useState(false);
-  const [tickets, settickets] = useState(null)
+  const [tickets, settickets] = useState(null);
+  const API_URL = import.meta.env.VITE_API_URL;
   const getUserTicket = () => {
   setisLoading(true)
-    return axios.get(`http://localhost:5000/api/tickets/user/${user && user.id}`).then(res => {
+    return axios.get(`${API_URL}/tickets/user/${user && user.id}`).then(res => {
       console.log("tickets",res.data)
     settickets(res.data);
     setisLoading(false);
@@ -34,7 +33,7 @@ export default function DashboardUser() {
    }, []);
     const deleteTicketsForDeletedEvents = () => {
       axios
-        .delete("http://localhost:5000/api/tickets/cleanup")
+        .delete(`${API_URL}/tickets/cleanup`)
         .then((res) => {
           console.log(res.data);
           

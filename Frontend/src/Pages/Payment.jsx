@@ -14,10 +14,11 @@ export default function Payment() {
   const [isPaid, setIsPaid] = useState(false);
   const [bookedseats, setbookedseats] = useState([]);
   const seatsIds = JSON.parse(localStorage.getItem("confirmedSeats"));
- const {fetchSeats}= useContext(SeatContextt)
+  const { fetchSeats } = useContext(SeatContextt);
+  const API_URL = import.meta.env.VITE_API_URL;
   const handlePayment = async () => {
     try {
-      await axios.post(`http://localhost:5000/api/pay/${eventId}`, {
+      await axios.post(`${API_URL}/pay/${eventId}`, {
         seatIds: seatsIds,
         userId,
       });
@@ -30,7 +31,7 @@ export default function Payment() {
   };
    const getEventById = () => {
      axios
-       .get(`http://localhost:5000/api/event/${eventId}`)
+       .get(`${API_URL}/event/${eventId}`)
        .then((res) => {
          console.log(res.data);
          setbookedseats((res.data.seats.filter(el=>el.status==="reserved")));

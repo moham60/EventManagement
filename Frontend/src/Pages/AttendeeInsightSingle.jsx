@@ -16,9 +16,10 @@ import qrcode from "../assets/Images/qr-code.png"
 import { useEffect, useState } from "react";
 
 export default function AttendeeInsightSingle() {
-    const { eventId } = useParams();
+  const { eventId } = useParams();
+  const API_URL = import.meta.env.VITE_API_URL;
     const getEventById = () => {
-        return axios.get(`http://localhost:5000/api/event/${eventId}`);
+        return axios.get(`${API_URL}/event/${eventId}`);
     }
     const data = useQuery({
         queryFn: getEventById,
@@ -28,7 +29,7 @@ export default function AttendeeInsightSingle() {
   const [chartData, setchartData] = useState(null);
   const [totalAttendees, settotalAttendees] = useState(0)
   const getBarCharData = () => {
-    axios.get(`http://localhost:5000/api/event/${eventId}/attendees/locations`).then(res => {
+    axios.get(`${API_URL}/event/${eventId}/attendees/locations`).then(res => {
       console.log(res.data);
       setchartData(res.data.data);
       settotalAttendees(res.data.totalPaidUsers);
@@ -43,7 +44,7 @@ export default function AttendeeInsightSingle() {
    const [series, setSeries] = useState([]);
   const getAgeChart = () => {
     axios.get(
-      `http://localhost:5000/api/event/${eventId}/attendees/age-groups`
+      `${API_URL}/event/${eventId}/attendees/age-groups`
     ).then(res => {
     
       const data = res.data.data;
@@ -59,7 +60,7 @@ export default function AttendeeInsightSingle() {
    }, [eventId]);
     const getIntersChart = () => {
       axios
-        .get(`http://localhost:5000/api/event/${eventId}/attendees/interests`)
+        .get(`${API_URL}/event/${eventId}/attendees/interests`)
         .then((res) => {
           console.log(res.data)
           
@@ -74,7 +75,7 @@ export default function AttendeeInsightSingle() {
   const [locations, setlocations] = useState(null)
   const getAllLocationsUsers = () => {
     axios
-      .get(`http://localhost:5000/api/user/locations`, {
+      .get(`${API_URL}/user/locations`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

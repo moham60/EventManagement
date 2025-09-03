@@ -25,9 +25,10 @@ export default function EventDetails() {
   const { eventId } = useParams();
     const [eventDtails, seteventDtails] = useState(null);
   const [editEvent, seteditEvent] = useState(false);
+  const API_URL = import.meta.env.VITE_API_URL;
     const getEventById = () => {
         axios
-          .get(`http://localhost:5000/api/event/${eventId}`)
+          .get(`${API_URL}/event/${eventId}`)
           .then((res) => {
             console.log(res);
             seteventDtails(res.data);
@@ -39,7 +40,7 @@ export default function EventDetails() {
     const { setevents } = useContext(Eventcontxt);
     const updateEvent = (values) => {
         axios
-          .put(`http://localhost:5000/api/event/edit/${eventId}`, values)
+          .put(`${API_URL}/event/edit/${eventId}`, values)
           .then((res) => {
             console.log(res.data);
             seteventDtails(res.data.event);
@@ -91,7 +92,7 @@ const { setseats,seats,fetchSeats } = useContext(SeatContextt);
 
   const handleEditVenueName = () => {
     axios
-      .put(`http://localhost:5000/api/venue/updateNameVenue/${eventDtails.venue._id}`, {
+      .put(`${API_URL}/venue/updateNameVenue/${eventDtails.venue._id}`, {
         name: eventDtails?.venue?.name,
       })
       .then((res) => {

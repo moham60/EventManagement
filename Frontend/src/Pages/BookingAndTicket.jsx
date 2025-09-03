@@ -9,12 +9,12 @@ import LoaderScreen from "../Components/LoaderScreen";
 export default function BookingAndTicket() {
   const navigate = useNavigate();
   const {user}=useContext(AuthContext)
- 
+ const API_URL = import.meta.env.VITE_API_URL;
   const getAllTickets = () => {
-    return axios.get("http://localhost:5000/api/tickets");
+    return axios.get(`${API_URL}/tickets`);
   };
   const getUserTicket = () => {
-    return axios.get(`http://localhost:5000/api/tickets/user/${user?.id}`);
+    return axios.get(`${API_URL}/tickets/user/${user?.id}`);
   }
   const { data ,isLoading} = useQuery({
     queryFn: user?.role=="admin"?getAllTickets:getUserTicket,

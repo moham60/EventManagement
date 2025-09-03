@@ -6,7 +6,7 @@ import eventLogo from "../assets/Images/Event.png";
 
 export default function Register() {
 const navigate = useNavigate();
- 
+ const API_URL = import.meta.env.VITE_API_URL;
   const values = {
     name: "",
     email: "",
@@ -16,7 +16,7 @@ const navigate = useNavigate();
    const registerNewUser = async (values, { resetForm }) => {
      try {
        const res = await axios.post(
-         "http://localhost:5000/api/auth/register",
+         `${API_URL}/auth/register`,
          values
        );
 

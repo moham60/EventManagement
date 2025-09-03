@@ -15,9 +15,10 @@ export default function BrowseEvents() {
   const [displayedEvents, setdisplayedEvents] = useState([]);
   const { token } = useContext(AuthContext);
   const [isLoading, setisLoading] = useState(false);
+  const API_URL = import.meta.env.VITE_API_URL;
   const getEvents = () => {
     setisLoading(true);
-      return axios.get("http://localhost:5000/api/event").then(res => {
+      return axios.get(`${API_URL}/event`).then(res => {
         setevents(res.data.events);
         setdisplayedEvents(res.data.events)
          setisLoading(false);
@@ -34,7 +35,7 @@ export default function BrowseEvents() {
    useEffect(() => {
      if (!token) return; // لو token مش جاهز متعملش request
      axios
-       .get("http://localhost:5000/api/venue/get", {
+       .get(`${API_URL}/venue/get`, {
          headers: { Authorization: `Bearer ${token}` },
        })
        .then((res) => {

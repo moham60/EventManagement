@@ -22,10 +22,11 @@ import LoaderScreen from "../Components/LoaderScreen";
 export default function DahboardAdmin() {
   const { user } = useContext(AuthContext);
   const { events } = useContext(Eventcontxt);
+const API_URL = import.meta.env.VITE_API_URL;
 
   const { seats } = useContext(SeatContextt);
   const getData = () => {
-    return axios.get("http://localhost:5000/api/dashboard/stats");
+    return axios.get(`${API_URL}/dashboard/stats`);
   }
   const {data,isLoading} = useQuery({
     queryFn: getData,

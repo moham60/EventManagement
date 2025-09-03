@@ -9,10 +9,10 @@ import { toast } from "react-toastify";
 export default function UserProfile() {
   const { user, token,setUser } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
-
+const API_URL = import.meta.env.VITE_API_URL;
   const getUserInfo = () => {
     return axios
-      .get(`http://localhost:5000/api/user/${user?._id}`, {
+      .get(`${API_URL}/user/${user?._id}`, {
         headers: {
           Authorization: `Bearer ${token}`, // authMiddleWare للتحقق من وجود token
         },
@@ -36,7 +36,7 @@ export default function UserProfile() {
   },[user])
   const updateUserProfile = (values) => {
     axios
-      .put(`http://localhost:5000/api/user/${user?.id}`, values, {
+      .put(`${API_URL}/user/${user?.id}`, values, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
