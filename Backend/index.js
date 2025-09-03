@@ -21,7 +21,13 @@ app.use(express.json());
 connectDB();
 
 // السماح لجميع الدومينات (للتجربة فقط)
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // تقدر تحط دومين الفرونت بس مثلاً "https://event-management-dq85.vercel.app"
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 //authRout
 app.use("/api/auth", authRoute);
