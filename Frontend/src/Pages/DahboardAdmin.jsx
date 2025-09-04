@@ -38,7 +38,7 @@ const API_URL = import.meta.env.VITE_API_URL;
     return <LoaderScreen/>
   }
   return (
-    <div className="px-4 py-2 bg-[#F2F2F2] min-h-screen">
+    <div className="px-4 py-16 lg:py-0 bg-[#F2F2F2] min-h-screen">
       <div className="nav flex flex-col lg:flex-row gap-4  items-center justify-between bg-black rounded-xl p-4 m-2">
         <div className="left w-full lg:w-auto flex items-center gap-2">
           <img src={maskGroup} alt="maskGroup" />
@@ -94,8 +94,8 @@ const API_URL = import.meta.env.VITE_API_URL;
             </div>
           </div>
           <div className="bottom">
-            <Seats seats={seats && seats} latest   />  
-          </div>   
+            <Seats seats={seats && seats} latest />
+          </div>
         </div>
         <div className="right w-full lg:w-auto  self-baseline mt-3 flex p-4 rounded-2xl bg-white flex-col gap-4">
           <div className="UpComingEvent">

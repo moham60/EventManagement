@@ -9,7 +9,7 @@ export default function Layout() {
       <Sidebar />
 
       {/* Main Content */}
-      <div className=" ml-0  py-18 lg:py-0   lg:ml-[250px]">
+      <div className=" ml-0    lg:ml-[250px]">
         <Outlet />
       </div>
     </div>

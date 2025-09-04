@@ -32,7 +32,7 @@ export default function Sidebar() {
     return (
       <>
         <div className="bg-[#1E1E1E] text-white flex justify-between items-center lg:hidden fixed top-0 left-0 right-0 z-50 py-2 px-6">
-          <div className="logo flex   items-center gap-4">
+          <Link to={"/"} className="logo flex   items-center gap-4">
             <img
               className="w-7 rounded-full border h-7"
               src={logo}
@@ -42,7 +42,7 @@ export default function Sidebar() {
               <h2 className="text-[18px]">EventX</h2>
               <span className="Reenie  text-[18px]">studio</span>
             </div>
-          </div>
+          </Link>
           <div className="right transition duration-150">
             <button
               onClick={() => {
@@ -70,7 +70,7 @@ export default function Sidebar() {
               src={logo}
               alt="logo"
             />
-            <div className="title hidden md:block relative">
+            <div className="title  relative">
               <h2 className="text-[24px]">EventX</h2>
               <span className="Reenie  text-[24px]">studio</span>
             </div>
@@ -97,7 +97,7 @@ export default function Sidebar() {
                       src={controlPanel}
                       alt=""
                     />
-                    <span className="hidden md:block">Dashboard</span>
+                    <span >Dashboard</span>
                   </Link>
                 ) : (
                   <Link

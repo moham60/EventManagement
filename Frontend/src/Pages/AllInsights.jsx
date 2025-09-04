@@ -14,7 +14,7 @@ import BieCharSimple from "../Components/BieCharSimple";
 
 export default function AllInsights() {
   return (
-    <div className="bg-[#F2F2F2] min-h-screen p-4">
+    <div className="bg-[#F2F2F2] px-4 py-16 min-h-screen p-4">
       <div className="header p-4 gap-2 flex-col items-center  lg:flex-row  bg-white rounded-2xl flex  justify-center lg:justify-between">
         <div className="left flex items-center gap-2">
           <img src={people} alt="peopel" />
@@ -81,12 +81,18 @@ export default function AllInsights() {
                 "interest-C",
                 "interest-D",
                 "interest-E",
-                          ]}
-                          title={"Attendee Insights"}
-                      />
-                      <BieCharSimple title={"Attendee age"} labels={["18-24 Years", "25-34 Years", "35-44 Years",
-                          "44+ Years"
-                      ]}/>
+              ]}
+              title={"Attendee Insights"}
+            />
+            <BieCharSimple
+              title={"Attendee age"}
+              labels={[
+                "18-24 Years",
+                "25-34 Years",
+                "35-44 Years",
+                "44+ Years",
+              ]}
+            />
           </div>
         </div>
       </div>

@@ -93,15 +93,15 @@ export default function AttendeeInsightSingle() {
     getAllLocationsUsers(); 
   },[])
   return (
-    <div className=" relative bg-[#F2F2F2] min-h-screen">
-      <div className="bg-white flex flex-wrap gap-4 justify-center items-center lg:justify-between p-4">
+    <div className=" relative px-4 py-16 md:py-18 lg:py-0 md:px-0 bg-[#F2F2F2] min-h-screen">
+      <div className="bg-white flex flex-wrap gap-10 justify-center items-center lg:justify-between p-4">
         <div className="flex flex-col   gap-2">
           <div className="flex items-center gap-2">
             <Link to={"/"} className="toEventDetails  w-8 h-8  block">
               <img src={backarrow2} alt="" />
             </Link>
 
-            <h1 className="text-[24px]">
+            <h1>
               Atteendee Insights- {event && event.title}
             </h1>
           </div>
@@ -129,15 +129,15 @@ export default function AttendeeInsightSingle() {
           </div>
         </div>
       </div>
-      <div className="cards  flex flex-col lg:flex-row gap-10  p-4">
-        <div className="left w-full lg:w-[70%] flex flex-col gap-4 items-center">
+      <div className="cards  flex flex-row  flex-wrap p-4">
+        <div className="left p-4  w-full lg:w-[70%] flex flex-col gap-4 items-center">
           <BieCharSimple
             title={"Age Group"}
             labels={labels && labels}
             series={series && series}
           />
-          <div className="flex items-center  flex-col lg:flex-row gap-4">
-            <div className="biechar w-full lg:w-[40%]">
+          <div className="flex items-center w-full flex-wrap  gap-4">
+            <div className="biechar w-full lg:w-[45%] ">
               <BieChart
                 title={"Attendee Interests"}
                 labels={[
@@ -148,12 +148,12 @@ export default function AttendeeInsightSingle() {
                 ]}
               />
             </div>
-            <div className="bar w-full lg:w-[60%]">
+            <div className="bar w-full lg:w-[45%]">
               <BarChar categories={locations} data={chartData && chartData} />
             </div>
           </div>
         </div>
-        <div className="right w-full lg:w-[38%]">
+        <div className="right w-full  lg:w-[30%]">
           <div className="bg-white rounded-2xl p-4">
             <h3>Engangement & Social Media Reach</h3>
             <h4 className="text-gray-500">

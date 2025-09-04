@@ -117,7 +117,7 @@ const deleteEvent = (id) => {
       const filteredEvents = events.filter((event) => event.status === status);
 
     return (
-      <div className="flex  w-full md:w-[45%] lg:w-[30.3%] flex-col mb-4      gap-4">
+      <div className="flex   w-full md:w-[45%] lg:w-[30.3%] flex-col mb-4      gap-4">
         <div className="title my-2  flex justify-center  items-center gap-2">
           <span
             className="block  w-5 h-5 rounded-full "
@@ -209,8 +209,8 @@ const deleteEvent = (id) => {
   }
 
   return (
-    <div className="relative bg-[#F2F2F2] min-h-screen ">
-      <div className="bg-white flex items-center justify-between p-4">
+    <div className="relative  py-10 lg:py-0 bg-[#F2F2F2] min-h-screen ">
+      <div className="bg-white flex flex-col md:flex-row gap-4 items-center justify-center md:justify-between p-4">
         <div>
           <h1 className="text-2xl">Event Management Section</h1>
           <button

@@ -149,8 +149,8 @@ export default function BrowseEvents() {
       );
     }
   return (
-    <div className="relative bg-[#F2F2F2] min-h-screen ">
-      <div className="bg-white flex items-center justify-between p-4">
+    <div className="relative px-4 py-16 bg-[#F2F2F2] min-h-screen ">
+      <div className="bg-white flex flex-col gap-4 md:flex-row items-center justify-between p-4">
         <h1 className="text-2xl">Browse Events</h1>
         <Search onChange={handleChange} placeHolder="search event by title" />
       </div>

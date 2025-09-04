@@ -169,10 +169,10 @@ const qrData = `${window.location.origin}/#/payment?eventId=${eventId}&userId=${
 
   return (
     <>
-      <div className="bg-white p-2 rounded-2xl shadow-md w-full lg:w-auto flex">
+      <div className="bg-white p-2 rounded-2xl shadow-md w-full lg:w-auto flex flex-wrap">
         {/* Left Side Info */}
         {latest && (
-          <div className="w-1/3">
+          <div className="w-full lg:w-1/3">
             <h2 className="text-xl font-bold mb-3">Latest Event</h2>
             <p className="  text-sm">
               <span className="font-semibold opacity-[47%]">Event Name:</span>{" "}
@@ -206,9 +206,7 @@ const qrData = `${window.location.origin}/#/payment?eventId=${eventId}&userId=${
         {/* Right Side Seats Grid */}
 
         <div
-          className={`${
-            latest ? "w-2/3" : "w-full"
-          } flex justify-center flex-col  items-center`}>
+          className={`w-full md:w-2/3 flex justify-center flex-col  items-center`}>
           <div className="title">
             <h3 className="font-bold text-xl mb-3 ">Seat Allocation System</h3>
           </div>

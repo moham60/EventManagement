@@ -11,7 +11,7 @@ export default function Reports() {
   return (
     <div
       className="flex  flex-col min-h-screen items-center justify-center  gap-4 
-      p-6 shadow">
+      px-4 py-16 shadow">
       <h2 className="text-xl font-semibold text-gray-700">
         Download Dashboard Reports
       </h2>

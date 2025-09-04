@@ -54,7 +54,7 @@ export default function DashboardUser() {
     
    
   return (
-    <div className="px-4 py-2 bg-[#F9F9F9] min-h-screen">
+    <div className="px-4 py-16 lg:py-0 bg-[#F9F9F9] min-h-screen">
       {/* Header */}
       <div className="nav flex flex-col lg:flex-row gap-4 items-center justify-between bg-purple-600 text-white rounded-xl p-4 m-2 shadow-md">
         <div className="left w-full lg:w-auto flex items-center gap-3">

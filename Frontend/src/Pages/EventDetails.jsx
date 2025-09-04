@@ -111,10 +111,10 @@ const { setseats,seats,fetchSeats } = useContext(SeatContextt);
   },[eventDtails?.status])
     const {user}=useContext(AuthContext)
   return (
-    <div className="p-5 relative">
+    <div className="px-5  py-18  relative">
       <Link
         to={`${user?.role == "admin" ? "/ManageEvents" : "/browseEvents"}`}
-        className="toEventDetails  w-8 h-8 absolute left-4 top-10">
+        className="toEventDetails  w-8 h-8 absolute left-4 top-18">
         <img src={backarrow2} alt="" />
       </Link>
 

@@ -56,7 +56,7 @@ export default function Payment() {
   }
 
   return (
-    <div className="p-6 flex flex-col items-center min-h-screen bg-gray-50">
+    <div className="px-4 py-16 flex flex-col items-center min-h-screen bg-gray-50">
       <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-lg">
         <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
           💳 صفحة الدفع
@@ -94,19 +94,20 @@ export default function Payment() {
               🎟 QR Code الخاص بتذكرتك:
             </h3>
             <div className="grid grid-cols-2 gap-6">
-              {bookedseats&&bookedseats.map((seat, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col items-center bg-gray-100 p-4 rounded-xl shadow-md">
-                  <QRCodeSVG
-                    value={`Event:${eventId},Seat:${seat.seatNumber},User:${userId}`}
-                    size={120}
-                  />
-                  <p className="text-sm font-semibold text-gray-700 mt-2">
-                    المقعد: {seat.seatNumber}
-                  </p>
-                </div>
-              ))}
+              {bookedseats &&
+                bookedseats.map((seat, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col items-center bg-gray-100 p-4 rounded-xl shadow-md">
+                    <QRCodeSVG
+                      value={`Event:${eventId},Seat:${seat.seatNumber},User:${userId}`}
+                      size={120}
+                    />
+                    <p className="text-sm font-semibold text-gray-700 mt-2">
+                      المقعد: {seat.seatNumber}
+                    </p>
+                  </div>
+                ))}
             </div>
           </div>
         )}

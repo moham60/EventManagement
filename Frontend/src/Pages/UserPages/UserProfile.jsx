@@ -77,7 +77,7 @@ const API_URL = import.meta.env.VITE_API_URL;
   }
  
   return (
-    <div className="p-6 profile  min-h-screen">
+    <div className=" px-4 py-16 profile  min-h-screen">
       <h1 className="text-center text-3xl capitalize font-semibold">
         Complete and edit your profile
       </h1>
@@ -152,7 +152,6 @@ const API_URL = import.meta.env.VITE_API_URL;
                 value={formikObj.values.occupation}
                 type="text"
                 onChange={formikObj.handleChange}
-                
                 className="mt-2 block w-full border rounded-md bg-white/5 px-3 py-1.5  placeholder-gray-500 focus:outline-indigo-500"
               />
             </div>
@@ -187,7 +186,6 @@ const API_URL = import.meta.env.VITE_API_URL;
                 type="text"
                 value={formikObj.values.location}
                 onChange={formikObj.handleChange}
-                
                 className="mt-2 block w-full border rounded-md bg-white/5 px-3 py-1.5  placeholder-gray-500 focus:outline-indigo-500"
               />
             </div>
@@ -206,10 +204,10 @@ const API_URL = import.meta.env.VITE_API_URL;
                 className="mt-2 block w-full  rounded-md bg-white px-3 py-1.5 border placeholder-gray-500 focus:outline-indigo-500"
               />
             </div>
-             {/* Age */}
+            {/* Age */}
             <div>
               <label htmlFor="age" className="block text-sm font-medium ">
-              Age
+                Age
               </label>
               <input
                 id="age"
@@ -237,8 +235,6 @@ const API_URL = import.meta.env.VITE_API_URL;
                 "Gaming",
                 "Anime",
                 "Movies",
-              
-
               ].map((interest, index) => (
                 <label
                   key={interest}
@@ -273,13 +269,10 @@ const API_URL = import.meta.env.VITE_API_URL;
               ))}
             </div>
           </div>
-
-         
         </div>
 
         {/* Save*/}
         <div className="flex items-center justify-end gap-x-6">
-          
           <button
             type="submit"
             className="rounded-md bg-indigo-800 text-white cursor-pointer px-3 py-2 text-sm font-semibold  hover:bg-indigo-600">
