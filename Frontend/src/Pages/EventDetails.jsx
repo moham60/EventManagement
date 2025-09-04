@@ -209,7 +209,7 @@ const { setseats,seats,fetchSeats } = useContext(SeatContextt);
                 <input
                   type="text"
                   id="strattime"
-                  name="strattime"
+                  name="starttime"
                   className="border border-[#ADADAD] w-full rounded-lg p-3 "
                   value={
                     editEvent
