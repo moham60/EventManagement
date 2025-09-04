@@ -74,7 +74,7 @@ export default function Seats({ seats, setSeats, latest = false, eventId,eventPr
         {
           eventId,
           seatIds: selectedSeats,
-          userId:  user?._id,
+          userId:  user?._id||user?.id,
         }
       );
 

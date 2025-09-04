@@ -1,7 +1,7 @@
 import Chart from "react-apexcharts";
 
 export default function BieChart({
-  labels = ["Group A", "Group B", "Group C", "Group D"] ,title,height=300}) {
+  labels  ,title,height=300}) {
   const options = {
     chart: {
       type: "donut",
@@ -20,7 +20,10 @@ export default function BieChart({
     },
     colors: ["#0DF38A", "#7224F2", "#2D44EC", "#FF371F"],
   };
-const series = [44, 55, 41, 67];
+    const finalLabels =
+      labels.length > 0 ? labels : ["18-25", "Gr", "Group C", "Group D"];
+    const finalSeries = series.length > 0 ? series : [44, 55, 41, 67];
+
 
   return (
     <div className="bg-white w-full  p-4 flex flex-col justify-center items-center rounded-2xl">

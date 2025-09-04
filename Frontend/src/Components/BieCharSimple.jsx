@@ -2,7 +2,9 @@ import Chart from "react-apexcharts";
 
 export default function BieCharSimple({ title, labels, series = [500, 350, 245, 124] }) {
    // الأرقام اللي عايز تعرضها
-
+const finalLabels =
+  labels.length > 0 ? labels : ["18-24", "25-34", "35-44", "45+"];
+const finalSeries = series.length > 0 ? series : [500, 350, 245, 124];
   const options = {
     chart: {
       type: "pie",
@@ -10,7 +12,7 @@ export default function BieCharSimple({ title, labels, series = [500, 350, 245, 
         show: false,
       },
     },
-    labels: labels,
+    labels: finalLabels,
 
     legend: {
       position: "bottom",
@@ -27,7 +29,7 @@ export default function BieCharSimple({ title, labels, series = [500, 350, 245, 
       <div className="chart">
         <Chart
           options={options}
-          series={series}
+          series={finalSeries}
           type="pie"
           width={300}
           height={300}
