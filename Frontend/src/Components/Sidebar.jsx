@@ -31,7 +31,7 @@ export default function Sidebar() {
  
     return (
       <>
-        <div className="bg-[#1E1E1E] text-white flex justify-between items-center lg:hidden fixed top-0 left-0 right-0 z-50 py-2 px-6">
+        <div className="bg-[#1E1E1E] text-white flex justify-between items-center lg:hidden fixed top-0 left-0 right-0 z-60 py-2 px-6">
           <Link to={"/"} className="logo flex   items-center gap-4">
             <img
               className="w-7 rounded-full border h-7"
