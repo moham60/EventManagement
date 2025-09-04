@@ -27,6 +27,7 @@ export default function Seats({ seats, setSeats, latest = false, eventId,eventPr
 
   const { events } = useContext(Eventcontxt);
   const { user } = useContext(AuthContext);
+  const { fetchSeats } = useContext(SeatContextt);
   const API_URL = import.meta.env.VITE_API_URL;
   const latestUpcomingEvent = useMemo(() => {
     if (!events || events.length === 0) return null;
@@ -154,7 +155,11 @@ export default function Seats({ seats, setSeats, latest = false, eventId,eventPr
     }
   };
 
- 
+  useEffect(() => {
+    if (latestUpcomingEvent) {
+     fetchSeats(latestUpcomingEvent.id);
+   }
+ },[latestUpcomingEvent?.id])
 
   
 const qrData = `${window.location.origin}/#/payment?eventId=${eventId}&userId=${
