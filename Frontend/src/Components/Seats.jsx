@@ -228,7 +228,7 @@ const qrData = `${window.location.origin}/#/payment?eventId=${eventId}&userId=${
           </div>
           <div className="grid gap-2">
             <div className="grid grid-cols-10 gap-2">
-              {seats?.length > 0 ? (
+              {seats&&seats?.length > 0 ? (
                 seats?.map((seat, i) => (
                   <div
                     key={i}
