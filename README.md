@@ -18,7 +18,7 @@ Frontend: HTML, CSS, JavaScript
 
 Backend: Node.js
 
-Database: (Please specify if used)
+Database: mongodb
 
 Hosting: Railway
 Railway Docs
