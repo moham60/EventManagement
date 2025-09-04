@@ -85,7 +85,7 @@ function App() {
       ],
     },
     {
-      path: "/userDashboard",
+      path: "/",
       element: <Layout />,
       children: [
         {

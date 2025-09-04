@@ -127,7 +127,7 @@ export default function Sidebar() {
                 <li className="flex   items-center gap-3">
                   <Link
                     className="flex items-center gap-2"
-                    to={"/userDashboard/browseEvents"}>
+                    to={"browseEvents"}>
                     <img
                       className="w-[25px] h-[25px]"
                       src={eventManage}
