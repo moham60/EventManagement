@@ -93,7 +93,7 @@ export default function AttendeeInsightSingle() {
     getAllLocationsUsers(); 
   },[])
   return (
-    <div className=" relative px-4 py-16 md:py-18 lg:py-0 md:px-0 bg-[#F2F2F2] min-h-screen">
+    <div className=" relative py-10 md:py-14  bg-[#F2F2F2] min-h-screen">
       <div className="bg-white flex flex-wrap gap-10 justify-center items-center lg:justify-between p-4">
         <div className="flex flex-col   gap-2">
           <div className="flex items-center gap-2">
@@ -101,7 +101,7 @@ export default function AttendeeInsightSingle() {
               <img src={backarrow2} alt="" />
             </Link>
 
-            <h1>
+            <h1 className="text-[20px]">
               Atteendee Insights- {event && event.title}
             </h1>
           </div>

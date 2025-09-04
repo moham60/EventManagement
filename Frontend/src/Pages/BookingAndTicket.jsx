@@ -50,7 +50,7 @@ export default function BookingAndTicket() {
   return (
     <>
       {tickets && (
-        <div className="min-h-screen py-14 px-6 bg-gray-100">
+        <div className="min-h-screen py-14 px-6 lg:py-4 bg-gray-100">
           {user?.role == "user" ? (
             <h1 className="text-center my-4 text-4xl font-extrabold">
               My Tickets

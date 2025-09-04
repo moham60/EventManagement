@@ -14,7 +14,7 @@ import BieCharSimple from "../Components/BieCharSimple";
 
 export default function AllInsights() {
   return (
-    <div className="bg-[#F2F2F2] px-4 py-16 min-h-screen p-4">
+    <div className="bg-[#F2F2F2] px-4 py-16 lg:py-2 min-h-screen ">
       <div className="header p-4 gap-2 flex-col items-center  lg:flex-row  bg-white rounded-2xl flex  justify-center lg:justify-between">
         <div className="left flex items-center gap-2">
           <img src={people} alt="peopel" />
