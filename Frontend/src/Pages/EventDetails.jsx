@@ -113,11 +113,7 @@ const { setseats,seats,fetchSeats } = useContext(SeatContextt);
   return (
     <div className="p-5 relative">
       <Link
-        to={`${
-          user?.role == "admin"
-            ? "/ManageEvents"
-            : "/browseEvents"
-        }`}
+        to={`${user?.role == "admin" ? "/ManageEvents" : "/browseEvents"}`}
         className="toEventDetails  w-8 h-8 absolute left-4 top-10">
         <img src={backarrow2} alt="" />
       </Link>
@@ -206,18 +202,23 @@ const { setseats,seats,fetchSeats } = useContext(SeatContextt);
                 Event Time
               </label>
               <div className="timeInpt relative  ">
-                <input
-                  type="text"
-                  id="strattime"
-                  name="starttime"
-                  className="border border-[#ADADAD] w-full rounded-lg p-3 "
-                  value={
-                    editEvent
-                      ? formatTimeTo12Hour(formikObj.values.starttime) ?? ""
-                      : formatTimeTo12Hour(eventDtails?.starttime) ?? ""
-                  }
-                  onChange={formikObj.handleChange}
-                />
+                {!editEvent ? (
+                  <input
+                    type="text"
+                    value={formatTimeTo12Hour(eventDtails?.starttime)}
+                    disabled
+                    className="border border-[#ADADAD] w-full rounded-lg p-3 "
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    id="starttime"
+                    name="starttime"
+                    className="border border-[#ADADAD] w-full rounded-lg p-3 "
+                    value={formikObj.values.starttime || ""}
+                    onChange={formikObj.handleChange}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -341,12 +342,11 @@ const { setseats,seats,fetchSeats } = useContext(SeatContextt);
             </p>
           ) : (
             <Seats
-              seats={seats&&seats}
+              seats={seats && seats}
               eventPrice={eventDtails && eventDtails.price}
               eventId={eventId}
               latest={false}
-                setSeats={setseats}
-               
+              setSeats={setseats}
             />
           )}
         </div>
@@ -405,7 +405,7 @@ const { setseats,seats,fetchSeats } = useContext(SeatContextt);
             </div>
             <p className="max-w-[250px]">Scan QR Code for easy Payment</p>
           </button>
-          {(user?.role == "admin" &&eventDtails?.status!=="closed")&& (
+          {user?.role == "admin" && eventDtails?.status !== "closed" && (
             <div className="editBtn flex flex-col lg:flex-row justify-center gap-2 items-center my-2">
               <button
                 onClick={handleEdit}
