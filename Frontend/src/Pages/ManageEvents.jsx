@@ -242,7 +242,7 @@ const deleteEvent = (id) => {
       {modelCreateEvent && (
         <div className="absolute inset-0 bg-amber-50 ">
          
-            <div className="absolute z-50 w-[90%] left-[50%] lg:top-[12%] translate-x-[-50%] top-[11%] sm:top-[17%] translate-y-[-50%] rounded-lg shadow-sm bg-white">
+            <div className="absolute z-50 w-[90%] left-[50%] lg:top-[25%] translate-x-[-50%] top-[11%] sm:top-[17%] translate-y-[-50%] rounded-lg shadow-sm bg-white">
               {/* Modal header */}
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
                 <h3 className="text-xl font-semibold text-gray-900">
