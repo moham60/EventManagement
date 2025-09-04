@@ -212,7 +212,7 @@ const qrData = `${window.location.origin}/#/payment?eventId=${eventId}&userId=${
           <div className="title">
             <h3 className="font-bold text-xl mb-3 ">Seat Allocation System</h3>
           </div>
-          <div className="mb-4 flex items-center gap-2 text-sm">
+          <div className="mb-4 flex flex-col md:flex-row items-center gap-2 text-sm">
             <div className="flex items-center gap-2">
               <span className="w-4 h-4 rounded bg-[#6340B6]"></span>
               Paid Seats
@@ -227,7 +227,7 @@ const qrData = `${window.location.origin}/#/payment?eventId=${eventId}&userId=${
             </div>
           </div>
           <div className="grid gap-2">
-            <div className="grid grid-cols-10 gap-2">
+            <div className="grid  grid-cols-6 sm:grid-cols-8 lg:grid-cols-10 gap-2">
               {seats&&seats?.length > 0 ? (
                 seats?.map((seat, i) => (
                   <div
