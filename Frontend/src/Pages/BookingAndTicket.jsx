@@ -14,7 +14,7 @@ export default function BookingAndTicket() {
     return axios.get(`${API_URL}/tickets`);
   };
   const getUserTicket = () => {
-    return axios.get(`${API_URL}/tickets/user/${user?.id}`);
+    return axios.get(`${API_URL}/tickets/user/${user?.id||user?._id}`);
   }
   const { data ,isLoading} = useQuery({
     queryFn: user?.role=="admin"?getAllTickets:getUserTicket,
@@ -22,7 +22,7 @@ export default function BookingAndTicket() {
   });
   const tickets = data?.data;
   const deleteTicketsForDeletedEvents = () => {
-    axios.delete("http://localhost:5000/api/tickets/cleanup").then(res => {
+    axios.delete(`${API_URL}/tickets/cleanup`).then(res => {
       console.log(res.data)
     }).catch(err => {
       console.log(err)
