@@ -116,7 +116,7 @@ const { setseats,seats,fetchSeats } = useContext(SeatContextt);
         to={`${
           user?.role == "admin"
             ? "/ManageEvents"
-            : "/userDashboard/browseEvents"
+            : "/browseEvents"
         }`}
         className="toEventDetails  w-8 h-8 absolute left-4 top-10">
         <img src={backarrow2} alt="" />
