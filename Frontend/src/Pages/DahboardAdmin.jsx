@@ -103,7 +103,7 @@ const API_URL = import.meta.env.VITE_API_URL;
           </div>
           <div className="events flex flex-col items-center gap-4">
             <div className="space-y-4">
-              {events && events.length > 0 ? (
+              {events && events?.length > 0 ? (
                 <>
                   {/* عرض أول 3 أحداث */}
                   {events.slice(0, 3).map((event) => (
@@ -116,7 +116,7 @@ const API_URL = import.meta.env.VITE_API_URL;
                   ))}
 
                   {/* زر See All لو فيه أكثر من 3 أحداث */}
-                  {events.length > 3 && (
+                  {events?.length > 3 && (
                     <Link
                       to="/ManageEvents"
                       onClick={() => console.log("Go to all events page")}

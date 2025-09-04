@@ -9,8 +9,13 @@ export default function EventContext({ children }) {
   const [events, setevents] = useState([]);
    const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
-    const stored = localStorage.getItem("events");
-    if (stored) setevents(JSON.parse(stored));
+    try {
+      const stored = localStorage.getItem("events");
+      if (stored) setevents(JSON.parse(stored));
+    } catch (err) {
+      console.error("Error parsing events from localStorage", err);
+      setevents([]);
+    }
   },[])
   useEffect(() => {
     axios.get(`${API_URL}/event`).then(res => {
