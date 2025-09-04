@@ -7,13 +7,13 @@ export const Eventcontxt = createContext();
 export default function EventContext({ children }) {
   
   const [events, setevents] = useState([]);
-  
+   const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     const stored = localStorage.getItem("events");
     if (stored) setevents(JSON.parse(stored));
   },[])
   useEffect(() => {
-    axios.get("http://localhost:5000/api/event").then(res => {
+    axios.get(`${API_URL}/event`).then(res => {
       console.log("events",res.data.events)
       setevents(res.data.events);
       localStorage.setItem("events",JSON.stringify(res.data.events))

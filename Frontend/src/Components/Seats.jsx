@@ -27,7 +27,7 @@ export default function Seats({ seats, setSeats, latest = false, eventId,eventPr
 
   const { events } = useContext(Eventcontxt);
   const { user } = useContext(AuthContext);
- 
+  const API_URL = import.meta.env.VITE_API_URL;
   const latestUpcomingEvent = useMemo(() => {
     if (!events || events.length === 0) return null;
 
@@ -69,7 +69,7 @@ export default function Seats({ seats, setSeats, latest = false, eventId,eventPr
     if (selectedSeats.length === 0) return alert("Select at least one seat!");
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/tickets/book-multiple",
+        `${API_URL}/tickets/book-multiple`,
         {
           eventId,
           seatIds: selectedSeats,
@@ -121,7 +121,7 @@ export default function Seats({ seats, setSeats, latest = false, eventId,eventPr
   const handleCancelSingleSeat = async (seatId) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/tickets/${eventId}/seats/${seatId}/cancel`,
+        `${API_URL}/tickets/${eventId}/seats/${seatId}/cancel`,
         { userId: user?.id||user._id }
       );
 
