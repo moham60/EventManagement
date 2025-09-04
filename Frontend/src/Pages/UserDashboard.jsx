@@ -14,7 +14,7 @@ export default function DashboardUser() {
   const API_URL = import.meta.env.VITE_API_URL;
   const getUserTicket = () => {
   setisLoading(true)
-    return axios.get(`${API_URL}/tickets/user/${user && user.id||user._id}`).then(res => {
+    return axios.get(`${API_URL}/tickets/user/${user && user.id||user?._id}`).then(res => {
       console.log("tickets", res.data);
     settickets(res.data);
     setisLoading(false);
