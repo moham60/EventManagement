@@ -48,7 +48,8 @@ export default function AttendeeInsightSingle() {
     ).then(res => {
     
       const data = res.data.data;
-      setSeries(data.map(item => item.y));
+      console.log("age data",data)
+        setSeries(data.map(item => item.y));
         setLabels(data.map((item) => item.x));
     }).catch(err => {
       console.log(err)

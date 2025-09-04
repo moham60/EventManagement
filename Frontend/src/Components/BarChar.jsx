@@ -31,7 +31,7 @@ export default function BarChar({
 
 {
   // ✅ لو array فاضية استخدم القيم الافتراضية
-  const finalData =
+  const finalData =data&&
     data.length > 0
       ? data
       : [
@@ -46,7 +46,7 @@ export default function BarChar({
           { x: "China", y: 573, fillColor: "#767676" },
           { x: "Germany", y: 360, fillColor: "#D249C9" },
         ];
-  const finalCategories =
+  const finalCategories =categories&&
     categories.length > 0
       ? categories
       : [

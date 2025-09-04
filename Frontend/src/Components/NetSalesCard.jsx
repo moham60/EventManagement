@@ -33,12 +33,12 @@ const monthlyData = [
 
 export default function NetSalesCard() {
     const [filter, setFilter] = useState("weekly");
-    const { events } = useContext(Eventcontxt);
+ 
 const data = filter === "weekly" ? weeklyData : monthlyData;
-    
+     const API_URL = import.meta.env.VITE_API_URL;
       const [infoCards, setinfoCards] = useState(null)
       useEffect(() => {
-        axios.get("http://localhost:5000/api/dashboard/stats").then(res => {
+        axios.get(`${API_URL}/dashboard/stats`).then(res => {
           setinfoCards(res.data);
           console.log(res.data)
     
