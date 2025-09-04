@@ -27,10 +27,10 @@ export default function DashboardUser() {
      
   useEffect(() => {
     if (user) {
-         getUserTicket();
-     }
-  
-   }, []);
+        getUserTicket();
+      }      
+     
+   }, [user]);
     const deleteTicketsForDeletedEvents = () => {
       axios
         .delete(`${API_URL}/tickets/cleanup`)
