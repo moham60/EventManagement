@@ -47,7 +47,7 @@ app.use("/api/reports", reportsRoute);
 app.use("/api/user", userRoute);
 /////
 const PORT = process.env.PORT||5000;
-app.listen(PORT, () => {
-  console.log("🚀 Server running on port 5000");
-});
+module.exports = app;
+
+
 
